@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gis_fiber/Screens/Main/mainmenu.dart';
 
 class MySplashScreen extends StatefulWidget {
   const MySplashScreen({Key? key}) : super(key: key);
@@ -21,16 +22,18 @@ class _MySplashScreenState extends State<MySplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/logo.png'), // логотип вашего приложения
+            Image.asset('assets/logo.png'), // Your app logo
             const SizedBox(height: 20),
-            const Text(
-                'Название вашего приложения'), // название вашего приложения
+            const Text('GIS for Fiber'), // Your app name
             const SizedBox(height: 40),
             ElevatedButton(
               onPressed: () {
-                // добавьте здесь логику для перехода на другой экран
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MainScreen()),
+                );
               },
-              child: const Text('Начать'),
+              child: const Text('Get Started'),
             ),
           ],
         ),
